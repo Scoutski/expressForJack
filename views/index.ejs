@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="assets/style.css" type="text/css" />
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<h1>Hello World!</h1>
+	<form method="POST" action="/person">
+		First Name: <input type="text" id="firstname" name="firstname">
+		Last Name: <input type="text" id="lastname" name="lastname">
+		Address: <input type="text" id="address" name="address">
+		<input type="submit" value="Submit" />
+	</form>
+	<ul>
+		<% for (var i = 0; i < data.length; i++) { %>
+			<li><a href="/person/<%=data[i]._id%>"><%= data[i].firstname + " " + data[i].lastname %></a></li>
+		<% } %>
+	</ul>
+</body>
+</html>
